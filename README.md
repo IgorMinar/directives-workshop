@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/pkozlowski-opensource/directives-workshop.png)](https://travis-ci.org/pkozlowski-opensource/directives-workshop)
+
 directives-workshop
 ===================
 

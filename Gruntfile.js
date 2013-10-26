@@ -18,7 +18,7 @@ module.exports = function (grunt) {
           'lib/angular-mocks.js',
           'lib/jasmine-matchers.js',
           'src/**/*.js'],
-        browsers: ['Chrome']
+        browsers: process.env.TRAVIS ? ['Firefox'] : ['Chrome']
       },
       tdd: {
         autoWatch: true
