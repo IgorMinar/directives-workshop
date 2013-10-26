@@ -12,7 +12,11 @@ module.exports = function (grunt) {
     karma: {
       options: {
         frameworks: ['jasmine'],
-        files: ['lib/*.js', 'src/**/*.js'],
+        files: [
+          'lib/jquery-1.10.2.js',
+          'lib/angular.js',
+          'lib/angular-mocks.js',
+          'src/**/*.js'],
         browsers: ['Chrome']
       },
       tdd: {
