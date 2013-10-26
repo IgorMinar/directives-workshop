@@ -4,7 +4,6 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.0",
-    "karma": "0.10.2", //hard-code karma version as 0.10.3 has a bug:
     "grunt-karma": "~0.6.2"
   }
 }
