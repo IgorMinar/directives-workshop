@@ -2,7 +2,7 @@ angular.module('bs.collapse', [])
   .directive('bsCollapse', function () {
     return {
       restrict: 'E',
-      templateUrl: '/templates/collapse/collapse.tpl.html',
+      templateUrl: 'templates/collapse/collapse.tpl.html',
       transclude: true,
       replace: true,
       scope: {

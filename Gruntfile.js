@@ -14,7 +14,7 @@ module.exports = function (grunt) {
       options: {
         module: 'templates',
         rename: function(moduleName) {
-          return moduleName.substring(moduleName.indexOf('/templates'));
+          return moduleName.substring(moduleName.indexOf('templates/'));
         }
       },
       main: {

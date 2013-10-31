@@ -4,11 +4,10 @@
     <title>Integration with NgModelController - using $render()</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet"/>
     <script src="../../../lib/angular.js"></script>
-    <script src="../../../tmp/templates.js"></script>
     <script src="alert.js"></script>
 
     <script type="text/javascript">
-        angular.module('demo', ['bs.alert', 'templates'])
+        angular.module('demo', ['bs.alert'])
                 .controller('AlertsCtrl', function ($scope) {
 
                     $scope.model = {name: 'AngularJS'};
