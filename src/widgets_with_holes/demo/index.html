@@ -34,9 +34,11 @@
         directive (although bound to a different scope that you might expect).<br>
         <input type="text" ng-model="model.name"/>
     </bs-alert>
-    <bs-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">
-        {{alert.msg}}
-    </bs-alert>
+    <div ng-repeat="alert in alerts">
+        <bs-alert type="{{alert.type}}" close="closeAlert($index)">
+            {{alert.msg}}
+        </bs-alert>
+    </div>
 </div>
 
 </body>
