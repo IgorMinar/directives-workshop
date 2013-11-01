@@ -2,7 +2,7 @@ describe('pagination', function () {
   var $scope, $compile;
 
   beforeEach(module('bs.pagination'));
-  beforeEach(module('/templates/pagination/pagination.tpl.html'));
+  beforeEach(module('templates/pagination/pagination.tpl.html'));
 
   beforeEach(inject(function ($rootScope, _$compile_) {
     $scope = $rootScope;

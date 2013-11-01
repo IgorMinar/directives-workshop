@@ -3,7 +3,7 @@ angular.module('bs.rating', [])
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '/templates/rating/rating.tpl.html',
+      templateUrl: 'templates/rating/rating.tpl.html',
       scope: {
         rating: '=',
         maxRating: '&',

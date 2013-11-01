@@ -4,11 +4,10 @@
     <title>Custom widgets</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet">
     <script src="../../../lib/angular.js"></script>
-    <script src="../../../tmp/templates.js"></script>
     <script src="pagination.js"></script>
 
     <script type="text/javascript">
-        angular.module('demo', ['bs.pagination', 'templates'])
+        angular.module('demo', ['bs.pagination'])
                 .controller('PaginationCtrl', function ($scope) {
                     $scope.currentPage = 3;
                     $scope.items = 100;
