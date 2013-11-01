@@ -23,7 +23,10 @@
 <body ng-app="demo" ng-controller="RatingCtrl">
 <div class="container">
 
-    <div class="well">Rating: <input type="number" ng-model="myValue" min="0" max="{{maxValue}}"/></div>
+    <div class="well">
+        <label for="ratingValue">Rating:</label>
+        <input type="number" ng-model="myValue" min="0" max="{{maxValue}}" class="form-control" id="ratingValue"/>
+    </div>
 
     <bs-rating rating="myValue" max-rating="maxValue" rated="onRatingChange($new, $old)"></bs-rating>
 
