@@ -5,9 +5,10 @@
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet">
     <script src="../../../lib/angular.js"></script>
     <script src="rating.js"></script>
+    <script src="ratingNgModel.js"></script>
 
     <script type="text/javascript">
-        angular.module('demo', ['bs.rating'])
+        angular.module('demo', ['bs.rating', 'bs.rating2'])
                 .controller('RatingCtrl', function ($scope) {
 
                     $scope.maxValue = 10;
@@ -15,6 +16,10 @@
 
                     $scope.onRatingChange = function(newRating, oldRating) {
                         console.log('Rating was changed from ' + oldRating + ' to ' + newRating);
+                    };
+
+                    $scope.onModelChange = function () {
+                        console.log('New rating is: ' + $scope.myValue);
                     };
                 });
     </script>
@@ -29,6 +34,10 @@
     </div>
 
     <bs-rating rating="myValue" max-rating="maxValue" rated="onRatingChange($new, $old)"></bs-rating>
+
+    <!-- Alternative approach, using ngModel
+    <bs-rating2 ng-model="myValue" max-rating="maxValue" ng-change="onModelChange()"></bs-rating2>
+    -->
 
 </div>
 </body>
