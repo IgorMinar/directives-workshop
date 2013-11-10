@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         }
       },
       main: {
-        src: ['src/**/*.tpl.html'],
+        src: ['src/**/*.html', '!src/**/index.html'],
         dest: 'tmp/templates.js'
       }
     },

@@ -2,7 +2,7 @@ angular.module('bs.rating2', [])
   .directive('bsRating2', function () {
     return {
       restrict: 'E',
-      templateUrl: 'rating.tpl.html',
+      templateUrl: 'rating.html',
       scope: {
         maxRating: '='
       },

@@ -4,8 +4,8 @@ describe('tabs', function () {
   var $compile;
 
   beforeEach(module('bs.tabs'));
-  beforeEach(module('tabs.tpl.html'));
-  beforeEach(module('tab.tpl.html'));
+  beforeEach(module('tabs.html'));
+  beforeEach(module('tab.html'));
   beforeEach(inject(function (_$rootScope_, _$compile_) {
     $scope = _$rootScope_;
     $compile = _$compile_;

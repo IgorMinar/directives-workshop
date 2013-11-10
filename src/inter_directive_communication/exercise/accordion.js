@@ -29,7 +29,7 @@ angular.module('bs.accordion', [])
     return {
       restrict: 'EA',
       scope: {},
-      templateUrl: 'accordion.tpl.html',
+      templateUrl: 'accordion.html',
       transclude: true,
       replace: true,
       controller: 'BsAccordionController'
@@ -39,7 +39,7 @@ angular.module('bs.accordion', [])
   .directive('bsCollapse', function () {
     return {
       restrict: 'E',
-      templateUrl: 'collapse.tpl.html',
+      templateUrl: 'collapse.html',
       transclude: true,
       replace: true,
       scope: {

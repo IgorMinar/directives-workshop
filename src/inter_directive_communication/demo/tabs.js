@@ -30,7 +30,7 @@ angular.module('bs.tabs', [])
     return {
       restrict: 'EA',
       scope: {},
-      templateUrl: 'tabs.tpl.html',
+      templateUrl: 'tabs.html',
       transclude: true,
       replace: true,
       controller: 'BsTabsController'
@@ -43,7 +43,7 @@ angular.module('bs.tabs', [])
       scope: {
         heading: '@'
       },
-      templateUrl: 'tab.tpl.html',
+      templateUrl: 'tab.html',
       transclude: true,
       replace: true,
       require: '^bsTabs',

@@ -3,7 +3,7 @@ describe("alert", function () {
   var $scope, $compile;
 
   beforeEach(module('bs.alert'));
-  beforeEach(module('alert.tpl.html'));
+  beforeEach(module('alert.html'));
 
   beforeEach(inject(function ($rootScope, _$compile_) {
     $scope = $rootScope;

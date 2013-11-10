@@ -2,7 +2,7 @@ angular.module('bs.alert', [])
   .directive('bsAlert', function () {
     return {
       restrict: 'E',
-      templateUrl: 'alert.tpl.html',
+      templateUrl: 'alert.html',
       transclude: true,
       scope: {
         type: '@',
