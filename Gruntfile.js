@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         }
       },
       main: {
-        src: ['src/**/*.html', '!src/**/index.html'],
+        src: ['src/**/*.html', '!src/**/index.html', '!src/**/solution/*.html'],
         dest: 'tmp/templates.js'
       }
     },
