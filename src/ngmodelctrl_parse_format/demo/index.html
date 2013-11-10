@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demo">
 <head>
     <title>Integration with NgModelController - parsing and formatting</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet"/>
@@ -8,13 +8,13 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.timefields'])
-                .controller('TimeCtrl', function ($scope) {
+                .controller('TimeDemoCtrl', function ($scope) {
                     $scope.myDate = new Date();
                 });
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="TimeCtrl">
+<body ng-controller="TimeDemoCtrl">
 
 <pre>
   {{ myDate | date:'medium'}}
