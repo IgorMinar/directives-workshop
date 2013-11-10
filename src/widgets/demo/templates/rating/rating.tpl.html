@@ -1,8 +1,5 @@
-<div>
-    <span ng-repeat="score in ratings"
-          class="glyphicon"
-          ng-class="{ 'glyphicon-star': newRating >= score, 'glyphicon-star-empty': newRating < score}"
-          ng-mouseenter="enter(score)" ng-mouseleave="leave(score)"
-          ng-click="rate(score)"></span>
-    {{ratingCandidate}} / {{maxRating()}}
-</div>
+<span ng-repeat="ratingValue in ratings"
+      class="glyphicon"
+      ng-class="{ 'glyphicon-star': isFilled(ratingValue), 'glyphicon-star-empty': !isFilled(ratingValue)}"
+      ng-mouseenter="enter(ratingValue)" ng-mouseleave="leave(ratingValue)"
+      ng-click="select(ratingValue)"></span>

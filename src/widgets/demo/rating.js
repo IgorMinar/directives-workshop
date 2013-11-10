@@ -2,37 +2,36 @@ angular.module('bs.rating', [])
   .directive('bsRating', function () {
     return {
       restrict: 'E',
-      replace: true,
       templateUrl: 'templates/rating/rating.tpl.html',
       scope: {
-        rating: '=',
-        maxRating: '&',
+        rating: '=', //or use '=ngModel' to get the component to support validation
+        maxRating: '=',
         rated: '&'
       },
       link: function (scope, iElement, iAttrs) {
 
-        var maxRating = scope.maxRating() || 5;
+        var maxRating = scope.maxRating || 5;
 
         scope.ratings = [];
-        for (var i = 0; i < maxRating; i++) {
-          scope.ratings.push(i + 1);
+        for (var i = 1; i <= maxRating; i++) {
+          scope.ratings.push(i);
         }
 
-        scope.$watch('rating', function(newRating) {
-          scope.newRating = newRating;
-        });
-
-        scope.enter = function (score) {
-          scope.newRating = score;
+        scope.isFilled = function(ratingValue) {
+          return (scope.highlightedRating || scope.rating) >= ratingValue;
         };
 
-        scope.leave = function (score) {
-          scope.newRating = scope.rating;
+        scope.enter = function (ratingValue) {
+          scope.highlightedRating = ratingValue;
         };
 
-        scope.rate = function (score) {
-          scope.rated({$new: score, $old: scope.rating});
-          scope.rating = scope.newRating = score;
+        scope.leave = function (ratingValue) {
+          scope.highlightedRating = undefined;
+        };
+
+        scope.select = function (ratingValue) {
+          scope.rated({$new: ratingValue, $old: scope.rating});
+          scope.rating = ratingValue;
         };
       }
     };

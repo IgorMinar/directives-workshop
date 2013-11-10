@@ -2,55 +2,35 @@ angular.module('bs.rating2', [])
   .directive('bsRating2', function () {
     return {
       restrict: 'E',
-      replace: true,
       templateUrl: 'templates/rating/rating.tpl.html',
       scope: {
-        maxRating: '&'
+        maxRating: '='
       },
       require: 'ngModel',
       link: function (scope, iElement, iAttrs, ngModelCtrl) {
 
-        var maxRating = scope.maxRating() || 5;
-
-        function resetCurrentSelection() {
-          scope.newRating = ngModelCtrl.$viewValue;
-        }
+        var maxRating = scope.maxRating || 5;
 
         scope.ratings = [];
-        for (var i = 0; i < maxRating; i++) {
-          scope.ratings.push(i + 1);
+        for (var i = 1; i <= maxRating; i++) {
+          scope.ratings.push(i);
         }
 
-        ngModelCtrl.$render = function() {
-          resetCurrentSelection();
+        scope.isFilled = function(ratingValue) {
+          return (scope.highlightedRating || ngModelCtrl.$viewValue) >= ratingValue;
         };
 
-        ngModelCtrl.$formatters.push(function(modelValue) {
-          var viewModel = parseInt(modelValue);
-          if (viewModel >= 0 && viewModel < maxRating) {
-            ngModelCtrl.$setValidity('rating', true);
-            return viewModel;
-          } else {
-            ngModelCtrl.$setValidity('rating', false);
-            return 0;
-          }
-        });
-
-        scope.enter = function (score) {
-          scope.newRating = score;
+        scope.enter = function (ratingValue) {
+          scope.highlightedRating = ratingValue;
         };
 
-        scope.leave = function (score) {
-          resetCurrentSelection();
+        scope.leave = function (ratingValue) {
+          scope.highlightedRating = undefined;
         };
 
-        scope.rate = function (score) {
-          ngModelCtrl.$setViewValue(score);
-          resetCurrentSelection();
+        scope.select = function (ratingValue) {
+          ngModelCtrl.$setViewValue(ratingValue);
         };
-
-        //initial rendering
-        resetCurrentSelection();
       }
     };
   });

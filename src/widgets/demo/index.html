@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demo">
 <head>
     <title>Custom widgets</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet">
@@ -9,7 +9,7 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.rating', 'bs.rating2'])
-                .controller('RatingCtrl', function ($scope) {
+                .controller('RatingDemoCtrl', function ($scope) {
 
                     $scope.maxValue = 10;
                     $scope.myValue = 5;
@@ -25,7 +25,7 @@
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="RatingCtrl">
+<body ng-controller="RatingDemoCtrl">
 <div class="container">
 
     <div class="well">
