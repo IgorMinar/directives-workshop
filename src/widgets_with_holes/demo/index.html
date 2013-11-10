@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demo">
 <head>
     <title>Integration with NgModelController - using $render()</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet"/>
@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.alert'])
-                .controller('AlertsCtrl', function ($scope) {
+                .controller('AlertsDemoCtrl', function ($scope) {
 
                     $scope.model = {name: 'AngularJS'};
 
@@ -25,7 +25,7 @@
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="AlertsCtrl">
+<body ng-controller="AlertsDemoCtrl">
 <div class="container">
     <pre>
         Hello, {{model.name}}!
