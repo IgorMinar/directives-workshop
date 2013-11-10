@@ -3,7 +3,7 @@ describe('rating', function () {
   var $scope, $compile;
 
   beforeEach(module('bs.rating'));
-  beforeEach(module('templates/rating/rating.tpl.html'));
+  beforeEach(module('rating.tpl.html'));
 
   beforeEach(inject(function ($rootScope, _$compile_) {
     $scope = $rootScope;

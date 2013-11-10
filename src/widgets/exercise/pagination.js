@@ -7,7 +7,7 @@ angular.module('bs.pagination', [])
         collectionSize: '=',
         pageSize: '='
       },
-      templateUrl: 'templates/pagination/pagination.tpl.html',
+      templateUrl: 'pagination.tpl.html',
       link: function (scope, iElement, iAttrs) {
 
         function updatePagesModel() {

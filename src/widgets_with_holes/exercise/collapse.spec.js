@@ -3,7 +3,7 @@ describe('collapse', function () {
   var $scope, $compile;
 
   beforeEach(module('bs.collapse'));
-  beforeEach(module('templates/collapse/collapse.tpl.html'));
+  beforeEach(module('collapse.tpl.html'));
 
   beforeEach(inject(function ($rootScope, _$compile_) {
     $scope = $rootScope;

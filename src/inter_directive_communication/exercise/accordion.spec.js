@@ -4,8 +4,8 @@ describe('accordion', function () {
   var $compile;
 
   beforeEach(module('bs.accordion'));
-  beforeEach(module('templates/accordion/accordion.tpl.html'));
-  beforeEach(module('templates/collapse/collapse.tpl.html'));
+  beforeEach(module('accordion.tpl.html'));
+  beforeEach(module('collapse.tpl.html'));
   beforeEach(inject(function (_$rootScope_, _$compile_) {
     $scope = _$rootScope_;
     $compile = _$compile_;

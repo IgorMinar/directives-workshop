@@ -2,7 +2,7 @@ angular.module('bs.rating', [])
   .directive('bsRating', function () {
     return {
       restrict: 'E',
-      templateUrl: 'templates/rating/rating.tpl.html',
+      templateUrl: 'rating.tpl.html',
       scope: {
         rating: '=', //or use '=ngModel' to get the component to support validation
         maxRating: '=',
