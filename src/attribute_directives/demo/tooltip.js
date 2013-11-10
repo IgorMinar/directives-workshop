@@ -1,15 +1,6 @@
 angular.module('bs.tooltip', [])
   .directive('bsTooltip', function () {
 
-    /**
-     * Bootstrap 3 uses the following markup to create tooltip elements. Tooltips,
-     * after being created are inserted after the host element in the DOM tree.
-     * Tooltip's text goes into the `div.tooltip-inner` element
-     * There are 2 additional important CSS classes at play as well:
-     * - one of `top`, `bottom`, `left`, `right` - needs to be added to `div.tooltip` to indicate positioning
-     * - `in` - to actually show (make visible) a tooltip
-     * @type {string}
-     */
     var tooltipTpl =
       '<div class="tooltip">' +
         '<div class="tooltip-inner"></div>' +
