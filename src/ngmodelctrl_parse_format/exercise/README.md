@@ -1,6 +1,6 @@
 ## Exercise
 
-Create a date field that parsers and formats a date according to a specified format.
+Create a date field that parses and formats a date according to a specified format.
 A date field should work with model of type `Date` and a desired format should be specified as `String`.
 Example usage:
 
