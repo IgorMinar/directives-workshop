@@ -9,36 +9,36 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.rating', 'bs.rating2'])
-                .controller('RatingDemoController', function ($scope) {
+                .controller('RatingDemoController', function () {
 
-                    $scope.maxValue = 10;
-                    $scope.myValue = 5;
+                    this.maxValue = 10;
+                    this.myValue = 5;
 
-                    $scope.onRatingChange = function(newRating, oldRating) {
+                    this.onRatingChange = function(newRating, oldRating) {
                         console.log('Rating was changed from ' + oldRating + ' to ' + newRating);
                     };
 
-                    $scope.onModelChange = function () {
+                    this.onModelChange = function () {
                         console.log('New rating is: ' + $scope.myValue);
                     };
                 });
     </script>
 
 </head>
-<body ng-controller="RatingDemoController">
+<body ng-controller="RatingDemoController as demo">
 <div class="container">
 
     <div class="well">
         <label for="ratingValue">Current Rating:</label>
-        <input type="number" ng-model="myValue" min="0" max="{{maxValue}}" class="form-control" id="ratingValue"/>
+        <input type="number" ng-model="demo.myValue" min="0" max="{{demo.maxValue}}" class="form-control" id="ratingValue">
       <label for="maxRating">Max Rating:</label>
-        <input type="number" ng-model="maxValue" min="0" class="form-control" id="maxRating"/>
+        <input type="number" ng-model="demo.maxValue" min="0" class="form-control" id="maxRating">
     </div>
 
-    <bs-rating rating="myValue" max-rating="maxValue" rated="onRatingChange($new, $old)"></bs-rating>
+    <bs-rating rating="demo.myValue" max-rating="demo.maxValue" rated="demo.onRatingChange($new, $old)"></bs-rating>
 
     <!-- Alternative approach, using ngModel
-    <bs-rating2 ng-model="myValue" max-rating="maxValue" ng-change="onModelChange()"></bs-rating2>
+    <bs-rating2 ng-model="demo.myValue" max-rating="demo.maxValue" ng-change="demo.onModelChange()"></bs-rating2>
     -->
 
 </div>
