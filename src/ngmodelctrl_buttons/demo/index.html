@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demo">
 <head>
     <title>Integration with NgModelController - using $render()</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet"/>
@@ -8,7 +8,7 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.buttons-checkbox'])
-                .controller('ButtonsCtrl', function ($scope) {
+                .controller('ButtonsDemoCtrl', function ($scope) {
                     $scope.model = {
                         left: false,
                         middle: true,
@@ -18,14 +18,14 @@
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="ButtonsCtrl">
+<body ng-controller="ButtonsDemoCtrl">
 
 <pre>{{model | json}}</pre>
 
 <div class="btn-group">
-    <button type="button" class="btn btn-primary" ng-model="model.left" bs-btn-checkbox>Left</button>
-    <button type="button" class="btn btn-primary" ng-model="model.middle" bs-btn-checkbox>Middle</button>
-    <button type="button" class="btn btn-primary" ng-model="model.right" bs-btn-checkbox>Right</button>
+    <button type="button" class="btn" ng-model="model.left" bs-btn-checkbox>Left</button>
+    <button type="button" class="btn" ng-model="model.middle" bs-btn-checkbox>Middle</button>
+    <button type="button" class="btn" ng-model="model.right" bs-btn-checkbox>Right</button>
 </div>
 
 </body>

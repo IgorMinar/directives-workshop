@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demo">
 <head>
     <title>Integration with NgModelController - using $render()</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet"/>
@@ -8,20 +8,20 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.buttons-radio'])
-                .controller('ButtonsCtrl', function ($scope) {
+                .controller('ButtonsExerciseCtrl', function ($scope) {
                     $scope.model = 1;
                 });
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="ButtonsCtrl">
+<body ng-controller="ButtonsExerciseCtrl">
 
 <pre>{{model | json}}</pre>
 
 <div class="btn-group">
-    <button type="button" class="btn btn-primary" ng-model="model" bs-btn-radio="0">Left</button>
-    <button type="button" class="btn btn-primary" ng-model="model" bs-btn-radio="1">Middle</button>
-    <button type="button" class="btn btn-primary" ng-model="model" bs-btn-radio="2">Right</button>
+    <button type="button" class="btn" ng-model="model" bs-btn-radio="0">Left</button>
+    <button type="button" class="btn" ng-model="model" bs-btn-radio="1">Middle</button>
+    <button type="button" class="btn" ng-model="model" bs-btn-radio="2">Right</button>
 </div>
 
 </body>
