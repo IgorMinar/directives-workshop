@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
 
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-karma');
@@ -42,8 +43,24 @@ module.exports = function (grunt) {
       ci: {
         singleRun: true
       }
+    },
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: '.',
+          keepalive: true,
+          middleware: function(connect, options){
+            return [
+              connect.static(options.base),
+              connect.directory(options.base)
+            ];
+          }
+        }
+      }
     }
   });
 
   grunt.registerTask('default', ['jshint', 'html2js', 'karma:ci']);
+  grunt.registerTask('server', ['connect:server']);
 };
