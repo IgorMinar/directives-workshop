@@ -8,14 +8,14 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.pagination'])
-                .controller('PaginationExerciseCtrl', function ($scope) {
+                .controller('PaginationExerciseController', function ($scope) {
                     $scope.currentPage = 3;
                     $scope.items = 100;
                 });
     </script>
 
 </head>
-<body ng-controller="PaginationExerciseCtrl">
+<body ng-controller="PaginationExerciseController">
 <div class="container">
 
     <div class="well">
@@ -26,7 +26,7 @@
         <input type="number" ng-model="currentPage" min="0" class="form-control" id="selectedPage"/>
     </div>
 
-    <bs-pagination page="currentPage" collection-size="items"></bs-pagination>
+    <bs-pagination selected-page="currentPage" collection-size="items"></bs-pagination>
 </div>
 </body>
 </html>

@@ -48,14 +48,15 @@ describe('rating', function () {
       expect(elm).toHaveScores([1, 1, 1, 1, 1]);
     });
 
+
     it('should accept maxRating attribute', function () {
       $scope.myValue = 3;
       var elm = compileElement('<bs-rating rating="myValue" max-rating="3"></bs-rating>', $scope);
 
       expect(elm).toHaveScores([1, 1, 1]);
     });
-
   });
+
 
   describe('UI to model', function () {
 
@@ -68,6 +69,7 @@ describe('rating', function () {
       expect($scope.myValue).toEqual(1);
       expect(elm).toHaveScores([1, 0, 0, 0, 0]);
     });
+
 
     it('should support selection callback', function () {
 
@@ -86,7 +88,8 @@ describe('rating', function () {
       expect($scope.oldRating).toEqual(3);
     });
 
-    it('should highlighted score without rating change on mouse hoover', function () {
+
+    it('should highlighted score without rating change on mouse hover', function () {
 
       $scope.myValue = 3;
       var elm = compileElement('<bs-rating rating="myValue"></bs-rating>', $scope);
@@ -101,7 +104,5 @@ describe('rating', function () {
       expect($scope.myValue).toEqual(3);
       expect(elm).toHaveScores([1, 1, 1, 0, 0]);
     });
-
   });
-
 });
