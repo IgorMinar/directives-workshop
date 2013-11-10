@@ -29,8 +29,10 @@
 <div class="container">
 
     <div class="well">
-        <label for="ratingValue">Rating:</label>
+        <label for="ratingValue">Current Rating:</label>
         <input type="number" ng-model="myValue" min="0" max="{{maxValue}}" class="form-control" id="ratingValue"/>
+      <label for="maxRating">Max Rating:</label>
+        <input type="number" ng-model="maxValue" min="0" class="form-control" id="maxRating"/>
     </div>
 
     <bs-rating rating="myValue" max-rating="maxValue" rated="onRatingChange($new, $old)"></bs-rating>

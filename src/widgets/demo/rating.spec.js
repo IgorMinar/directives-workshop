@@ -12,7 +12,7 @@ describe('rating', function () {
 
   beforeEach(function() {
     this.addMatchers({
-      toHaveScores: function(requiredScores) {
+      toEqualRating: function(requiredScores) {
 
         var scores = [];
         var spans = this.actual.find('span');
@@ -40,12 +40,12 @@ describe('rating', function () {
     it('should render rating based on model and default max length', function () {
       $scope.myValue = 3;
       var elm = compileElement('<bs-rating rating="myValue"></bs-rating>', $scope);
-      expect(elm).toHaveScores([1, 1, 1, 0, 0]);
+      expect(elm).toEqualRating([1, 1, 1, 0, 0]);
 
       $scope.$apply(function(){
         $scope.myValue = 5;
       });
-      expect(elm).toHaveScores([1, 1, 1, 1, 1]);
+      expect(elm).toEqualRating([1, 1, 1, 1, 1]);
     });
 
 
@@ -53,7 +53,7 @@ describe('rating', function () {
       $scope.myValue = 3;
       var elm = compileElement('<bs-rating rating="myValue" max-rating="3"></bs-rating>', $scope);
 
-      expect(elm).toHaveScores([1, 1, 1]);
+      expect(elm).toEqualRating([1, 1, 1]);
     });
   });
 
@@ -67,7 +67,7 @@ describe('rating', function () {
       elm.find('span').eq(0).click();
 
       expect($scope.myValue).toEqual(1);
-      expect(elm).toHaveScores([1, 0, 0, 0, 0]);
+      expect(elm).toEqualRating([1, 0, 0, 0, 0]);
     });
 
 
@@ -97,12 +97,12 @@ describe('rating', function () {
       elm.find('span').eq(0).mouseenter();
 
       expect($scope.myValue).toEqual(3);
-      expect(elm).toHaveScores([1, 0, 0, 0, 0]);
+      expect(elm).toEqualRating([1, 0, 0, 0, 0]);
 
       elm.find('span').eq(0).mouseleave();
 
       expect($scope.myValue).toEqual(3);
-      expect(elm).toHaveScores([1, 1, 1, 0, 0]);
+      expect(elm).toEqualRating([1, 1, 1, 0, 0]);
     });
   });
 });

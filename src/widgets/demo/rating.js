@@ -34,13 +34,13 @@ angular.module('bs.rating', [])
 
 
         // mouseenter event handler
-        scope.enter = function (ratingValue) {
+        scope.enter = function(ratingValue) {
           scope.highlightedRating = ratingValue;
         };
 
 
         // mouseleave event handler
-        scope.leave = function () {
+        scope.leave = function() {
           scope.highlightedRating = undefined;
         };
 
