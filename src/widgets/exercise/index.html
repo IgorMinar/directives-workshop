@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="demo">
 <head>
     <title>Custom widgets</title>
     <link href="../../../assets/bootstrap.min.css" rel="stylesheet">
@@ -8,14 +8,14 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.pagination'])
-                .controller('PaginationCtrl', function ($scope) {
+                .controller('PaginationExerciseCtrl', function ($scope) {
                     $scope.currentPage = 3;
                     $scope.items = 100;
                 });
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="PaginationCtrl">
+<body ng-controller="PaginationExerciseCtrl">
 <div class="container">
 
     <div class="well">

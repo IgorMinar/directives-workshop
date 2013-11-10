@@ -2,56 +2,49 @@ angular.module('bs.pagination', [])
   .directive('bsPagination', function () {
     return {
       restrict: 'E',
-      replace: true,
       scope: {
         page: '=',
-        collectionSize: '&',
-        pageSize: '&'
+        collectionSize: '=',
+        pageSize: '='
       },
       templateUrl: 'templates/pagination/pagination.tpl.html',
       link: function (scope, iElement, iAttrs) {
 
-        var noOfPages;
-        scope.pages = [];
+        function updatePagesModel() {
 
-        function calculateNoOfPages(collectionSize, pageSize) {
-          return Math.ceil(collectionSize / (pageSize || 10));
-        }
+          //re-calculate new length of pages
+          var noOfPages = Math.ceil(scope.collectionSize / (scope.pageSize || 10));
 
-        function preparePagesModel(noOfPages) {
+          //fill-in model needed to render pages
           scope.pages.length = 0;
           for (var i = 0; i < noOfPages; i++) {
             scope.pages.push(i);
           }
+
+          //make sure that the selected page is within available pages range
+          scope.selectPage(scope.page);
         }
 
-        scope.selectPage = function (pageNo) {
-          scope.page = Math.max(Math.min(pageNo, noOfPages - 1), 0);
-        };
+        scope.pages = [];
 
         scope.hasPrevious = function () {
           return scope.page > 0;
         };
 
         scope.hasNext = function () {
-          return scope.page < noOfPages - 1;
+          return scope.page < scope.pages.length -1;
         };
 
-        scope.$watch(scope.collectionSize, function (newSize) {
-          noOfPages = calculateNoOfPages(newSize, scope.pageSize());
-          preparePagesModel(noOfPages);
-          scope.selectPage(scope.page);
-        });
+        scope.selectPage = function (pageNo) {
+          scope.page = Math.max(Math.min(pageNo, scope.pages.length - 1), 0);
+        };
 
-        scope.$watch(scope.pageSize, function (newSize) {
-          noOfPages = calculateNoOfPages(scope.collectionSize(), newSize);
-          preparePagesModel(noOfPages);
-          scope.selectPage(scope.page);
-        });
+        //re-render pages on collection / page size changes
+        scope.$watch('collectionSize', updatePagesModel);
+        scope.$watch('pageSize', updatePagesModel);
 
-        scope.$watch('page', function (newPage) {
-          scope.selectPage(newPage);
-        });
+        //make sure that page is within available pages range on model changes
+        scope.$watch('page', scope.selectPage);
       }
     };
   });
