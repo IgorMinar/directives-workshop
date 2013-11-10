@@ -22,20 +22,14 @@ describe("alert", function () {
 
   it('should set "warning" CSS class by default', function () {
     var element = compileElement('<bs-alert>Default</bs-alert>', $scope);
-    expect(element).toHaveClass('alert-warning');
+    expect(element.find('div.alert')).toHaveClass('alert-warning');
   });
 
   it('should set appropriate CSS class based on the alert type', function () {
     var element = compileElement('<bs-alert type="{{\'info\'}}">Info</bs-alert>', $scope);
-    expect(element).toHaveClass('alert-info');
+    expect(element.find('div.alert')).toHaveClass('alert-info');
   });
   
-  it('should be possible to add additional classes for alert', function () {
-    var element = compileElement('<bs-alert class="alert-block" type="info">Some additional class</bs-alert>', $scope);
-    expect(element).toHaveClass('alert-block');
-    expect(element).toHaveClass('alert-info');
-  });
-
   it('should not show close buttons if no close callback specified', function () {
     var element = compileElement('<bs-alert>No close</bs-alert>', $scope);
     expect(findCloseButton(element).is(':visible')).toBeFalsy();
