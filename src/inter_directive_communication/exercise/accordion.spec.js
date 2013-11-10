@@ -16,7 +16,7 @@ describe('accordion', function () {
     var accordionCtrl;
 
     beforeEach(inject(function ($controller) {
-      accordionCtrl = $controller('AccordionCtrl', {'$scope': $scope});
+      accordionCtrl = $controller('BsAccordionController', {'$scope': $scope});
     }));
 
     it('should allow adding and removing panels', function () {

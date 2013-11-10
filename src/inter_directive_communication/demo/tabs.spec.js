@@ -16,7 +16,7 @@ describe('tabs', function () {
     var tabsCtrl;
 
     beforeEach(inject(function ($controller) {
-      tabsCtrl = $controller('TabsCtrl', {'$scope': $scope});
+      tabsCtrl = $controller('BsTabsController', {'$scope': $scope});
     }));
 
     it('should allow adding new tabs making the first one active', function () {

@@ -1,6 +1,6 @@
 angular.module('bs.accordion', [])
 
-  .controller('AccordionCtrl', function ($scope) {
+  .controller('BsAccordionController', function ($scope) {
 
     $scope.panels = [];
 
@@ -32,7 +32,7 @@ angular.module('bs.accordion', [])
       templateUrl: 'templates/accordion/accordion.tpl.html',
       transclude: true,
       replace: true,
-      controller: 'AccordionCtrl'
+      controller: 'BsAccordionController'
     };
   })
 
