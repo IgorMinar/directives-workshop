@@ -1,7 +1,10 @@
+var cp = require('child_process')
+
 module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-karma');
 
@@ -58,7 +61,26 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+    watch: {
+      tdd: {
+        files: [
+          'src/**/*.js',
+          'src/**/*.html' ],
+        tasks: [ 'html2js' ],
+        options: {
+          spawn: false
+        }
+      }
     }
+  });
+
+  grunt.registerTask('tdd', ['karmalize', 'watch:tdd']);
+
+  grunt.registerTask('karmalize', 'start karma in a background grunt', function () {
+    var karma = cp.spawn('grunt', ['karma:tdd']);
+
+    karma.stdout.pipe(process.stdout);
   });
 
   grunt.registerTask('default', ['jshint', 'html2js', 'karma:ci']);
