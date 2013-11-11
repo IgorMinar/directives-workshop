@@ -15,5 +15,5 @@ As soon as your environment is set up you can see directives demo by:
 
 ## Development workflow
 
-* `grunt karma:tdd` - for TDD development. This will watch source and test files running all the test on each change.
+* `grunt tdd` - for TDD development. This will watch source and test files running all the test on each change.
 * `grunt` - default build. This will lint the code and run all the tests.
