@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/pkozlowski-opensource/directives-workshop.png)](https://travis-ci.org/pkozlowski-opensource/directives-workshop)
-
 directives-workshop
 ===================
 
@@ -9,7 +7,13 @@ directives-workshop
 * `npm install`
 * test your setup by running `grunt`
 
-## Development
+## Demo
+
+As soon as your environment is set up you can see directives demo by:
+* starting a build-in web server: `grunt server`
+* pointing your favorite browser to [http://127.0.0.1:8000/src/](http://127.0.0.1:8000/src/)
+
+## Development workflow
 
 * `grunt karma:tdd` - for TDD development. This will watch source and test files running all the test on each change.
 * `grunt` - default build. This will lint the code and run all the tests.
