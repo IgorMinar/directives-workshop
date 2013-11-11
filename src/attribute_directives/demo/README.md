@@ -10,7 +10,7 @@ similar to the one shown on the Bootstrap's [demo page](http://getbootstrap.com/
     * factory method vs. compile vs. link
 * prefix directives to avoid collisions, ideally with your own project identifier (2-3 letters)
 * DOM manipulation goes into directives
-* direct DOM manipulation in a directive - jQury can be useful for low-level DOM routines
+* direct DOM manipulation in a directive - jQuery can be useful for low-level DOM routines
 * element passed to a directive is already jQuery / jqLite - wrapped
 * observing attributes vs. attribute value straight from the DOM
 * registering DOM event handlers

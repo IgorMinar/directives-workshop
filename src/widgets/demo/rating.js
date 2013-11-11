@@ -2,12 +2,12 @@ angular.module('bs.rating', [])
   .directive('bsRating', function () {
     return {
       restrict: 'E',              // trigger on Element e.g. <bs-rating></bs-rating>
-      templateUrl: 'rating.html', // template
+      templateUrl: 'rating.html', // template location
       scope: {                    // isolate scope variable mappings
-        rating: '=',              // two-way data-binding to the expression specified by rating attribute
+        rating: '=',              // two-way data-binding to the expression specified by `rating` attribute
                                   //    you could also use '=ngModel' instead to get the component to support validation
-        maxRating: '=',           // two-way data-binding to the expression specified by max-rating attribute
-        rated: '&'                // expose function that will evaluate expression specified by rated attribute
+        maxRating: '=',           // two-way data-binding to the expression specified by `max-rating` attribute
+        rated: '&'                // expose function that will evaluate expression specified by `rated` attribute
       },
       link: function (scope, iElement, iAttrs) {
 

@@ -1,6 +1,8 @@
 angular.module('bs.tooltip', [])
   .directive('bsTooltip', function () {
 
+
+    // simple tooltip template
     var tooltipTpl =
       '<div class="tooltip">' +
         '<div class="tooltip-inner"></div>' +
@@ -11,11 +13,17 @@ angular.module('bs.tooltip', [])
 
       compile: function compileFunction(tElement, tAttrs) {
 
+        // prepare directive template!
+        // this executes only once for each occurrence of `tooltip` *in template*
+
         var placement = tAttrs.bsTooltipPlacement || 'top';
         var tooltipTplEl = angular.element(tooltipTpl);
         tooltipTplEl.addClass(placement);
 
         return function linkingFunction(scope, iElement, iAttrs) {
+
+          // instantiate directive!
+          // this executes once for each occurrence of `tooltip` *in the view*
 
           var tooltipInstanceEl = tooltipTplEl.clone();
 

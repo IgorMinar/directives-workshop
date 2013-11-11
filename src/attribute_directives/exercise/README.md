@@ -5,7 +5,7 @@ Bootstrap's [demo page](http://getbootstrap.com/javascript/#popovers)
 
 You don't need to spend time on DOM-positioning logic - there is an utility function -
 `calculatePosition(hostEl, elToPosition, placement)` -
-that can position a DOM element in relation to another one.
+that can position a DOM element in relation to another one (`/lib/positioning.js`).
 Check its jsDoc for more details.
 
 ## Bootstrap CSS

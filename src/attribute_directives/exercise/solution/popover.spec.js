@@ -24,6 +24,7 @@ describe('popover', function () {
     expect(elm.find('.popover').length).toEqual(0);
   });
 
+
   it('should observe interpolated content and title', function () {
     $scope.title = 't1';
     $scope.content = 'foo';
@@ -40,6 +41,7 @@ describe('popover', function () {
     expect(elm.find('.popover-content').text()).toEqual('bar');
   });
 
+
   describe('placement', function () {
 
     it('should be placed on top by default', function () {
@@ -48,6 +50,7 @@ describe('popover', function () {
       elm.find('button').click();
       expect(elm.find('.popover')).toHaveClass('top');
     });
+
 
     it('should accept placement attribute', function () {
       var elm = compileElement('<div><button bs-popover="content" bs-popover-placement="right"></button></div>', $scope);

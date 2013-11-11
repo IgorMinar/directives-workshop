@@ -20,7 +20,7 @@ The directive should watch changes to the `collection-size` and `page-size` attr
 Bootstrap 3 is using the following HTML structure to render the pagination widget:
 
 ```html
-<ul class="pagination">
+<ul class="pagination pagination-lg">
   <li class="disabled"><a href="#">&laquo;</a></li>
   <li class="active"><a href="#">1</a></li>
   <li><a href="#">2</a></li>

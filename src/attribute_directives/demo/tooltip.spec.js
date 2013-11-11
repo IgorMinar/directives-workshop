@@ -14,6 +14,7 @@ describe('tooltip', function () {
     return element;
   }
 
+
   it('should show and hide tooltip on mouse enter / leave', function () {
     var elm = compileElement('<div><button bs-tooltip="content"></button></div>', $scope);
 
@@ -23,6 +24,7 @@ describe('tooltip', function () {
     elm.find('button').mouseleave();
     expect(elm.find('.tooltip').length).toEqual(0);
   });
+
 
   it('should observe interpolated content', function () {
     $scope.content = 'foo';
@@ -36,6 +38,7 @@ describe('tooltip', function () {
     expect(elm.find('.tooltip-inner').text()).toEqual('bar');
   });
 
+
   describe('placement', function () {
 
     it('should be placed on top by default', function () {
@@ -45,6 +48,7 @@ describe('tooltip', function () {
       expect(elm.find('.tooltip')).toHaveClass('top');
     });
 
+
     it('should accept placement attribute', function () {
       var elm = compileElement('<div><button bs-tooltip="content" bs-tooltip-placement="right"></button></div>', $scope);
 
@@ -52,6 +56,5 @@ describe('tooltip', function () {
       expect(elm.find('.tooltip')).toHaveClass('right');
       expect(elm.find('.tooltip')).not.toHaveClass('top');
     });
-
   });
 });
