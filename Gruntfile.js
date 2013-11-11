@@ -81,8 +81,7 @@ module.exports = function (grunt) {
   grunt.registerTask('tdd', ['karmalize', 'watch:tdd']);
 
   grunt.registerTask('karmalize', 'start karma in a background grunt', function () {
-    var karma = cp.spawn('grunt', ['karma:tdd']);
-
+    var karma = cp.spawn(process.platform === 'win32' ? 'grunt.cmd' : 'grunt', ['karma:tdd']);
     karma.stdout.pipe(process.stdout);
   });
 
