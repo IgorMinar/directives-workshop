@@ -28,7 +28,7 @@ Bootstrap 3 is using the following HTML structure to render the alert widget:
         </h4>
     </div>
     <div class="panel-collapse">
-        <div class="panel-body>Content goes here...</div>
+        <div class="panel-body">Content goes here...</div>
     </div>
 </div>
 ```
