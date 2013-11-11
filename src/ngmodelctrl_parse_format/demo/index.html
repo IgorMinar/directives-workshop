@@ -22,10 +22,10 @@
 <div class="well row">
     <form name="form" class="form-inline">
         <div class="form-group col-xs-2" ng-class="{'has-success': form.hour.$valid, 'has-error': form.hour.$invalid}">
-            <input name="hour" ng-model="myDate" bs-hourfield class="form-control"/>
+            Hour: <input name="hour" ng-model="myDate" bs-hourfield class="form-control"/>
         </div>
         <div class="form-group col-xs-2" ng-class="{'has-success': form.minute.$valid, 'has-error': form.minute.$invalid}">
-            <input name="minute" ng-model="myDate" bs-minutefield class="form-control"/>
+            Minute: <input name="minute" ng-model="myDate" bs-minutefield class="form-control"/>
         </div>
     </form>
 </div>
