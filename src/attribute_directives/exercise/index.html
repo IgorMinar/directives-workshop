@@ -10,14 +10,14 @@
 
     <script type="text/javascript">
         angular.module('demo', ['bs.popover'])
-                .controller('PopoverCtrl', function ($scope) {
+                .controller('PopoverController', function ($scope) {
                     $scope.title = 'A title';
                     $scope.content = 'Some content that can be a bit longer';
                 });
     </script>
 
 </head>
-<body ng-app="demo" ng-controller="PopoverCtrl">
+<body ng-app="demo" ng-controller="PopoverController">
 <div class="well" style="padding: 3%">
     <div class="form-group">
         <label for="title">Title: </label><input ng-model="title" id="title" class="form-control"/>
