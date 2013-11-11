@@ -21,6 +21,8 @@ Popovers, after being created are inserted after the host element in the DOM tre
 Popovers's content goes into the `div.popover-content` element while its title to the `div.popover-title` element.
 There is one more, important CSS classes at play here:
 one of `top`, `bottom`, `left`, `right` - needs to be added to `div.popover` to indicate positioning.
+Additionally the popover elements needs to get `display: block` styling to have its position
+calculated and be displayed properly.
 
 By default popovers are shown / hidden in response to the DOM click events.
 
