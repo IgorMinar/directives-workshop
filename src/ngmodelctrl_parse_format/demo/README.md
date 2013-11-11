@@ -15,3 +15,4 @@ time-picker widgets.
 * Testing:
     * DOM-based testing requires a bit of gymnastic to trigger input changes (different on different browsers)
     * it is good to test parsing / formatting functions in isolation (see minutesfield.spec.js)
+

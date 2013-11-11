@@ -38,3 +38,5 @@ The mentioned class should be removed when a panel gets collapsed.
 Also the `height` style should be toggled between `auto` (expanded) and `0` (collapsed).
 
 Collapse toggling should happen by clicking on the `<a>` element of the heading.
+
+See index.html which is already wired to use the component you are about to write.

@@ -30,3 +30,5 @@ There are 2 additional important CSS classes at play as well:
 By default popovers are shown / hidden in response to the DOM click events.
 
 Popover can be seen in action on Bootstrap's [demo page](http://getbootstrap.com/javascript/#popovers)
+
+See index.html which is already wired to use the component you are about to write.

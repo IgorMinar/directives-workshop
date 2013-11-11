@@ -36,3 +36,5 @@ Each item (`<li>`) inside the pagination widget can be in one of 3 states, marke
 * default (no additional CSS class)
 * `active` - indicating that a give item is selected
 * `disabled` - indicating that a give item is disabled and can't be selected
+
+See index.html which is already wired to use the component you are about to write.
