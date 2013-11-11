@@ -2,14 +2,14 @@
 
 Create a pagination directive as seen on the Bootstrap's [demo page](http://getbootstrap.com/components/#pagination).
 This directive should be used as an HTML element and should work with the following attributes:
-* `page` - model indicating index (0-based) of an active (selected page)
+* `selected-page` - model indicating index (0-based) of an active (selected page)
 * `collection-size` - (integer) total number of items in a collection to be iterated over
 * `page-size` - (integer, optional - defaults to 10) - number of collection items per page.
 
 Example usage:
 
 ```html
-<bs-pagination page="currentPage" collection-size="items" page-size="20"></bs-pagination>
+<bs-pagination selected-page="currentPage" collection-size="items" page-size="20"></bs-pagination>
 ```
 
 The directive should watch changes to the `collection-size` and `page-size` attributes and update UI
