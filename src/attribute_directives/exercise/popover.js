@@ -5,5 +5,5 @@ angular.module('bs.popover', [])
 
     return {
 
-    }
+    };
   });

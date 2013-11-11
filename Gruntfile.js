@@ -1,4 +1,4 @@
-var cp = require('child_process')
+var cp = require('child_process');
 
 module.exports = function (grunt) {
 
