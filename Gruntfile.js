@@ -38,6 +38,9 @@ module.exports = function (grunt) {
           'lib/moment.js',
           'src/**/*.js',
           'tmp/*.js'],
+        exclude: [
+          'src/**/solution/*.js'
+        ],
         browsers: process.env.TRAVIS ? ['Firefox'] : ['Chrome']
       },
       tdd: {
