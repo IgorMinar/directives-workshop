@@ -1,4 +1,4 @@
-describe('collapse', function () {
+xdescribe('collapse', function () {
 
   var $scope, $compile;
 

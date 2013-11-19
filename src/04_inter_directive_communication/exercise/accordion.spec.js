@@ -1,4 +1,4 @@
-describe('accordion', function () {
+xdescribe('accordion', function () {
 
   var $scope;
   var $compile;

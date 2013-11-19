@@ -1,4 +1,4 @@
-describe('datefield', function () {
+xdescribe('datefield', function () {
 
   var $scope, $compile;
   var $sniffer;
