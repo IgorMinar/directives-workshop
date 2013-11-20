@@ -1,4 +1,4 @@
-describe('popover', function () {
+xdescribe('popover', function () {
 
   var $scope, $compile;
   var $templateCache;

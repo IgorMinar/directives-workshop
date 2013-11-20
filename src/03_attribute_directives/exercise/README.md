@@ -20,16 +20,15 @@ Bootstrap 3 uses the following markup to create popover elements:
 </div>
 ```
 
-Popovers, after being created are inserted after the host element in the DOM tree.
+**Heads up!** Popover elements needs to get `display: block` styling to have their position
+ calculated correctly and assure proper display.
 
 Popovers's content goes into the `div.popover-content` element while its title to the `div.popover-title` element.
 There is one more, important CSS classes at play here:
 one of `top`, `bottom`, `left`, `right` - needs to be added to `div.popover` to indicate positioning.
-Additionally the popover elements needs to get `display: block` styling to have its position
-calculated and be displayed properly.
 
+
+Popovers, after being created are inserted after the host element in the DOM tree.
 By default popovers are shown / hidden in response to the DOM click events.
-
-Popover can be seen in action on Bootstrap's [demo page](http://getbootstrap.com/javascript/#popovers)
 
 See index.html which is already wired to use the component you are about to write.

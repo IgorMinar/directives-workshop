@@ -34,7 +34,7 @@ angular.module('bs.tabs', [])
     return {
       restrict: 'EA',                  // Element or Attribute
       scope: {},                       // get isolate scope without any mapping
-      templateUrl: 'tabs.html',        // template location
+      templateUrl: '/src/04_inter_directive_communication/demo/tabs.html', // template location
       transclude: true,                // turn on content transclusion
       replace: true,                   // replace the current element with the root element of the template
       controller: 'BsTabsController'   // controller
@@ -47,7 +47,7 @@ angular.module('bs.tabs', [])
       scope: {                         // isolate scope definition with mapping
         heading: '@'                   // observe the value of `heading` attribute and place it on the isolate scope as `heading`
       },
-      templateUrl: 'tab.html',         // template location
+      templateUrl: '/src/04_inter_directive_communication/demo/tab.html',         // template location
       transclude: true,                // turn on content transclusion
       replace: true,                   // replace the current element with the root element of the template
       require: '^bsTabs',              // require that this directive be placed on a child element of bsTabs directive element
