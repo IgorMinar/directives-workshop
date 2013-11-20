@@ -16,7 +16,11 @@ module.exports = function (grunt) {
     },
     html2js: {
       options: {
-        module: 'templates'
+        base: '',
+        module: 'templates',
+        rename: function (moduleName) {
+          return '/' + moduleName;
+        }
       },
       main: {
         src: ['src/**/*.html', '!src/**/index.html', '!src/**/solution/*.html'],
