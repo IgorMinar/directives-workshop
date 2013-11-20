@@ -2,7 +2,7 @@ angular.module('bs.rating', [])
   .directive('bsRating', function () {
     return {
       restrict: 'E',              // trigger on Element e.g. <bs-rating></bs-rating>
-      templateUrl: 'rating.html', // template location
+      templateUrl: '/src/01_widgets/demo/rating.html', // template location
       scope: {                    // isolate scope variable mappings
         rating: '=',              // two-way data-binding to the expression specified by `rating` attribute
                                   //    you could also use '=ngModel' instead to get the component to support validation

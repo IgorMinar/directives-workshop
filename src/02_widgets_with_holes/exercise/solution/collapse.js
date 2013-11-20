@@ -2,7 +2,7 @@ angular.module('bs.collapse', [])
   .directive('bsCollapse', function () {
     return {
       restrict: 'E',
-      templateUrl: 'collapse.html',
+      templateUrl: '/src/02_widgets_with_holes/exercise/solution/collapse.html',
       transclude: true,
       scope: {
         heading: '@'

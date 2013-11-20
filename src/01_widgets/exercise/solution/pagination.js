@@ -7,7 +7,7 @@ angular.module('bs.pagination', [])
         collectionSize: '=',
         itemsPerPage: '='
       },
-      templateUrl: 'pagination.html',
+      templateUrl: '/src/01_widgets/exercise/solution/pagination.html',
       link: function (scope, iElement, iAttrs) {
 
         function updatePagesModel() {

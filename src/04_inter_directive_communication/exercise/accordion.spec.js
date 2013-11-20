@@ -4,8 +4,7 @@ xdescribe('accordion', function () {
   var $compile;
 
   beforeEach(module('bs.accordion'));
-  beforeEach(module('accordion.html'));
-  beforeEach(module('collapse.html'));
+  beforeEach(module('templates'));
   beforeEach(inject(function (_$rootScope_, _$compile_) {
     $scope = _$rootScope_;
     $compile = _$compile_;

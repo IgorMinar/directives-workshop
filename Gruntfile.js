@@ -16,10 +16,7 @@ module.exports = function (grunt) {
     },
     html2js: {
       options: {
-        module: 'templates',
-        rename: function(moduleName) {
-          return moduleName.substring(moduleName.lastIndexOf('/') + 1);
-        }
+        module: 'templates'
       },
       main: {
         src: ['src/**/*.html', '!src/**/index.html', '!src/**/solution/*.html'],
@@ -37,11 +34,18 @@ module.exports = function (grunt) {
           'lib/jasmine-matchers.js',
           'lib/moment.js',
           'src/**/*.js',
-          'tmp/*.js'],
-        exclude: [
-          'src/**/solution/*.js'
+          'src/**/*.html'
         ],
-        browsers: process.env.TRAVIS ? ['Firefox'] : ['Chrome']
+        exclude: [
+          'src/**/index.html'
+        ],
+        browsers: process.env.TRAVIS ? ['Firefox'] : ['Chrome'],
+        ngHtml2JsPreprocessor: {
+          prependPrefix: '/',
+          // setting this option will create only a single module that contains templates
+          // from all the files, so you can load them all with module('templates')
+          moduleName: 'templates'
+        }
       },
       tdd: {
         autoWatch: true
@@ -64,27 +68,10 @@ module.exports = function (grunt) {
           }
         }
       }
-    },
-    watch: {
-      tdd: {
-        files: [
-          'src/**/*.js',
-          'src/**/*.html' ],
-        tasks: [ 'html2js' ],
-        options: {
-          spawn: false
-        }
-      }
     }
   });
 
-  grunt.registerTask('tdd', ['karmalize', 'watch:tdd']);
-
-  grunt.registerTask('karmalize', 'start karma in a background grunt', function () {
-    var karma = cp.spawn(process.platform === 'win32' ? 'grunt.cmd' : 'grunt', ['karma:tdd']);
-    karma.stdout.pipe(process.stdout);
-  });
-
+  grunt.registerTask('tdd', ['karma:tdd']);
   grunt.registerTask('default', ['jshint', 'html2js', 'karma:ci']);
   grunt.registerTask('server', ['connect:server']);
 };
