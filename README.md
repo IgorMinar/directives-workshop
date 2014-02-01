@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/pkozlowski-opensource/directives-workshop.png?branch=master)](https://travis-ci.org/pkozlowski-opensource/directives-workshop)
+[![devDependency Status](https://david-dm.org/pkozlowski-opensource/directives-workshop.png?branch=master)](https://david-dm.org/pkozlowski-opensource/directives-workshop#info=devDependencies)
+
 directives-workshop
 ===================
 
