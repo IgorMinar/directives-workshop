@@ -7,7 +7,7 @@ directives-workshop
 ## About this workshop
 
 This repository contains demo and exercises for the AngularJS directives workshop. During the workshop participants
-are going to build several AngularJS directives, mostly based on [http://getbootstrap.com](Bootstrap's) HTML and CSS.
+are going to build several AngularJS directives, mostly based on [Bootstrap's](http://getbootstrap.com) HTML and CSS.
 
 The aim here is to go over several kinds of directives and illustrate typical coding and testing patterns.
 
